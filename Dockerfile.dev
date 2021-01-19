@@ -1,0 +1,10 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN yarn install
+# normally can be left out because of volume stuff to grab code live
+COPY . .  
+
+CMD ["yarn", "start"]
